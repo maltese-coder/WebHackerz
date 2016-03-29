@@ -5,10 +5,10 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace NetPress.DAL
 {
-    public class NetPressContext : DbContext
+    public class NetPressContextA : DbContext
     {
 
-        public NetPressContext() : base("NetPressContext")
+        public NetPressContextA() : base("NetPressContext")
         {
         }
 
