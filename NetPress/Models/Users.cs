@@ -19,7 +19,9 @@ namespace NetPress.Models
 
         public string surname { get; set; }
 
-        public string memberSince { get; set; }
+        public DateTime memberSince { get; set; }
+
+        public virtual ICollection<Posts> Posts{ get; set; }
 
     }
 }
