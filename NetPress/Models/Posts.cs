@@ -7,6 +7,7 @@ namespace NetPress.Models
 {
     public class Posts
     {
+
         public int postID { get; set; }
         public string title { get; set; }
 
@@ -18,11 +19,11 @@ namespace NetPress.Models
 
         public string status{ get; set; }
 
-        public string dateCreated { get; set; }
+        public DateTime dateCreated { get; set; }
 
-        public string lastModified{ get; set; }
+        public DateTime lastModified{ get; set; }
 
- 
+        public virtual Users Users{ get; set; }
 
 
     }
