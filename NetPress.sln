@@ -7,11 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetPress", "NetPress\NetPre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetPress.Tests", "NetPress.Tests\NetPress.Tests.csproj", "{D90CA280-83AB-47B3-AA2A-02CB6191B5A7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{0BE97516-DDD3-45A2-95B5-228C09BD22D9}"
-	ProjectSection(SolutionItems) = preProject
-		NetPressContext.cs = NetPressContext.cs
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
