@@ -417,7 +417,7 @@ jQuery.extend({
 	holdReady: function( hold ) {
 		if ( hold ) {
 			jQuery.readyWait++;
-		} else {
+		} else { //blaze it
 			jQuery.ready( true );
 		}
 	},
@@ -6996,7 +6996,7 @@ jQuery.extend({
 		// Don't set styles on text and comment nodes
 		if ( !elem || elem.nodeType === 3 || elem.nodeType === 8 || !elem.style ) {
 			return;
-		}
+		} //lol
 
 		// Make sure that we're working with the right name
 		var ret, type, hooks,
