@@ -1,13 +1,10 @@
 ﻿@model NetPress.Models.Posts
 
 @{
-    ViewBag.Title = "Create Post";
+    ViewBag.Title = "Create";
 }
 
-<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
-
-<h2>Create Post</h2>
+<h2>Create</h2>
 
 
 @using (Html.BeginForm()) 
@@ -29,7 +26,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.content, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.content, new { htmlAttributes = new { @class = "form-control", @width = "700px" } })
+                @Html.EditorFor(model => model.content, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.content, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -50,24 +47,21 @@
             </div>
         </div>
 
-        @*<div class="form-group">
+        <div class="form-group">
             @Html.LabelFor(model => model.dateCreated, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.dateCreated, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.dateCreated, "", new { @class = "text-danger" })
             </div>
-        </div>*@
-        @Html.Hidden("model.dateCreated")
+        </div>
 
-        @*<div class="form-group">
+        <div class="form-group">
             @Html.LabelFor(model => model.lastModified, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.lastModified, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.lastModified, "", new { @class = "text-danger" })
             </div>
-        </div>*@
-
-        @Html.Hidden("model.lastModified")
+        </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

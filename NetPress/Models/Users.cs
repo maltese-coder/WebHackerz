@@ -23,7 +23,7 @@ namespace NetPress.Models
 
         public DateTime memberSince { get; set; }
 
-        public virtual ICollection<Posts> Posts{ get; set; }
+        public virtual ICollection<Posts> Post{ get; set; }
 
     }
 }

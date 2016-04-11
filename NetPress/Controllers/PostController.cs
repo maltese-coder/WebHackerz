@@ -18,7 +18,7 @@ namespace NetPress.Controllers
         // GET: Post
         public ActionResult Index()
         {
-            return View(db.Posts.ToList());
+            return View(db.Post.ToList());
         }
 
         // GET: Post/Details/5
@@ -28,12 +28,12 @@ namespace NetPress.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Posts posts = db.Posts.Find(id);
-            if (posts == null)
+            Posts post = db.Post.Find(id);
+            if (post == null)
             {
                 return HttpNotFound();
             }
-            return View(posts);
+            return View(post);
         }
 
         // GET: Post/Create
@@ -48,18 +48,18 @@ namespace NetPress.Controllers
         [HttpPost]
         [ValidateInput(false)]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "postID,title,content,category,status,dateCreated,lastModified")] Posts posts)
+        public ActionResult Create([Bind(Include = "postID,title,content,category,status,dateCreated,lastModified")] Posts post)
         {
-            posts.dateCreated = DateTime.Now;
-            posts.lastModified = DateTime.Now;
+            post.dateCreated = DateTime.Now;
+            post.lastModified = DateTime.Now;
             if (ModelState.IsValid)
             {
-                db.Posts.Add(posts);
+                db.Post.Add(post);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(posts);
+            return View(post);
         }
 
         // GET: Post/Edit/5
@@ -70,12 +70,12 @@ namespace NetPress.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Posts posts = db.Posts.Find(id);
-            if (posts == null)
+            Posts post = db.Post.Find(id);
+            if (post == null)
             {
                 return HttpNotFound();
             }
-            return View(posts);
+            return View(post);
         }
 
         // POST: Post/Edit/5
@@ -85,16 +85,16 @@ namespace NetPress.Controllers
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
 
-        public ActionResult Edit([Bind(Include = "postID,title,content,category,status,dateCreated,lastModified")] Posts posts)
+        public ActionResult Edit([Bind(Include = "postID,title,content,category,status,dateCreated,lastModified")] Posts post)
         {
             if (ModelState.IsValid)
             {
-                posts.lastModified = DateTime.Now;
-                db.Entry(posts).State = EntityState.Modified;
+                post.lastModified = DateTime.Now;
+                db.Entry(post).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(posts);
+            return View(post);
         }
 
         // GET: Post/Delete/5
@@ -104,12 +104,12 @@ namespace NetPress.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Posts posts = db.Posts.Find(id);
-            if (posts == null)
+            Posts post = db.Post.Find(id);
+            if (post == null)
             {
                 return HttpNotFound();
             }
-            return View(posts);
+            return View(post);
         }
 
         // POST: Post/Delete/5
@@ -117,8 +117,8 @@ namespace NetPress.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Posts posts = db.Posts.Find(id);
-            db.Posts.Remove(posts);
+            Posts post = db.Post.Find(id);
+            db.Post.Remove(post);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
